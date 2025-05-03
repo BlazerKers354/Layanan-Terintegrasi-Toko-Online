@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "83af1eee-afe8-46af-ac98-3d8e8a5792a3",
+		"name": "Layanan Terintegrasi Toko Online",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44618611",
+		"_collection_link": "https://zulfaazkafarisadilah.postman.co/workspace/My-Workspace~7e758659-06d1-4cc6-8106-14d2acde2fb8/collection/44618611-83af1eee-afe8-46af-ac98-3d8e8a5792a3?action=share&source=collection_link&creator=44618611"
+	},
+	"item": [
+		{
+			"name": "User_Service",
+			"item": [
+				{
+					"name": "post user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"laravel/laravel\",\r\n    \"type\": \"project\",\r\n    \"description\": \"The skeleton application for the Laravel framework.\",\r\n    \"keywords\": [\"laravel\", \"framework\"],\r\n    \"license\": \"MIT\",\r\n    \"require\": {\r\n        \"php\": \"^8.1\",\r\n        \"guzzlehttp/guzzle\": \"^7.9\",\r\n        \"laravel/framework\": \"^10.10\",\r\n        \"laravel/sanctum\": \"^3.3\",\r\n        \"laravel/tinker\": \"^2.8\"\r\n    },\r\n    \"require-dev\": {\r\n        \"fakerphp/faker\": \"^1.9.1\",\r\n        \"laravel/pint\": \"^1.0\",\r\n        \"laravel/sail\": \"^1.18\",\r\n        \"mockery/mockery\": \"^1.4.4\",\r\n        \"nunomaduro/collision\": \"^7.0\",\r\n        \"phpunit/phpunit\": \"^10.1\",\r\n        \"spatie/laravel-ignition\": \"^2.0\"\r\n    },\r\n    \"autoload\": {\r\n        \"psr-4\": {\r\n            \"App\\\\\": \"app/\",\r\n            \"Database\\\\Factories\\\\\": \"database/factories/\",\r\n            \"Database\\\\Seeders\\\\\": \"database/seeders/\"\r\n        }\r\n    },\r\n    \"autoload-dev\": {\r\n        \"psr-4\": {\r\n            \"Tests\\\\\": \"tests/\"\r\n        }\r\n    },\r\n    \"scripts\": {\r\n        \"post-autoload-dump\": [\r\n            \"Illuminate\\\\Foundation\\\\ComposerScripts::postAutoloadDump\",\r\n            \"@php artisan package:discover --ansi\"\r\n        ],\r\n        \"post-update-cmd\": [\r\n            \"@php artisan vendor:publish --tag=laravel-assets --ansi --force\"\r\n        ],\r\n        \"post-root-package-install\": [\r\n            \"@php -r \\\"file_exists('.env') || copy('.env.example', '.env');\\\"\"\r\n        ],\r\n        \"post-create-project-cmd\": [\r\n            \"@php artisan key:generate --ansi\"\r\n        ]\r\n    },\r\n    \"extra\": {\r\n        \"laravel\": {\r\n            \"dont-discover\": []\r\n        }\r\n    },\r\n    \"config\": {\r\n        \"optimize-autoloader\": true,\r\n        \"preferred-install\": \"dist\",\r\n        \"sort-packages\": true,\r\n        \"allow-plugins\": {\r\n            \"pestphp/pest-plugin\": true,\r\n            \"php-http/discovery\": true\r\n        }\r\n    },\r\n    \"minimum-stability\": \"stable\",\r\n    \"prefer-stable\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user_service}}/users",
+							"host": [
+								"{{user_service}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product_Service",
+			"item": [
+				{
+					"name": "product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_service}}/products/?user_id=1",
+							"host": [
+								"{{product_service}}"
+							],
+							"path": [
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "user_service",
+			"value": "http://localhost:8001/api\t",
+			"type": "string"
+		},
+		{
+			"key": "product_service\t",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
