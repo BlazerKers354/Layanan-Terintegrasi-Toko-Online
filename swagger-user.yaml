@@ -1,0 +1,36 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: User Service
+  contact: {}
+host: localhost:8000
+basePath: /api
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /users:
+    get:
+      summary: Ambil daftar user
+      tags:
+        - User_Service
+      operationId: getUsers
+      deprecated: false
+      parameters:
+        - name: Content-Type
+          in: header
+          required: false
+          type: string
+          enum: [application/json]
+        - name: Accept
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Berhasil mengambil data user
+tags:
+  - name: User_Service
